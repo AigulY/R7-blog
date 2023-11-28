@@ -11,6 +11,14 @@
 #     <p><%= index %> fish</p>
 # <% end %> 
 
+# <% @pages.each do |page| %>
+#     <p><%= page.title %></P>
+# <% end %>
+
+# <% @pages.each do |page| %>
+#     <p><%= link_to page.title, "/pages/#{page.id}" %></P>
+# <% end %>
+
 <% @pages.each do |page| %>
-    <p><%= page.title %></P>
+    <p><%= link_to page.title, page_path(page) %></P>
 <% end %>
