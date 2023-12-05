@@ -19,7 +19,6 @@ before_action :set_page, only: [:show, :edit, :update, :destroy]
     end
 
     def edit
-        set_page
     end
 
     def update
