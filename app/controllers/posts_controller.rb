@@ -62,6 +62,9 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = "we couldn't find that post"
+      redirect_to posts_url
     end
 
     # Only allow a list of trusted parameters through.
