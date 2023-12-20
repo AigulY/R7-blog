@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
+        format.html { redirect_to post_url(@post), alert: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      flash[:notice] = "we couldn't find that post"
+      flash[:alert] = "we couldn't find that post"
       redirect_to posts_url
     end
 

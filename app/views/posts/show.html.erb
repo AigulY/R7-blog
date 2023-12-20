@@ -1,4 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p style="color: red"><%= alert %></p>
+<% end %>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
